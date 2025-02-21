@@ -661,45 +661,44 @@ namespace UTweener
         /// </summary>
         /// <param name="easingFunction">The enum associated with the easing function.</param>
         /// <returns>The easing function</returns>
-        public static Function GetEasingFunction(Ease easingFunction)
-        {
-            switch (easingFunction)
+        public static Function GetEasingFunction(Ease easingFunction) =>
+            easingFunction switch
             {
-                case Ease.EaseInQuad: return EaseInQuad;
-                case Ease.EaseOutQuad: return EaseOutQuad;
-                case Ease.EaseInOutQuad: return EaseInOutQuad;
-                case Ease.EaseInCubic: return EaseInCubic;
-                case Ease.EaseOutCubic: return EaseOutCubic;
-                case Ease.EaseInOutCubic: return EaseInOutCubic;
-                case Ease.EaseInQuart: return EaseInQuart;
-                case Ease.EaseOutQuart: return EaseOutQuart;
-                case Ease.EaseInOutQuart: return EaseInOutQuart;
-                case Ease.EaseInQuint: return EaseInQuint;
-                case Ease.EaseOutQuint: return EaseOutQuint;
-                case Ease.EaseInOutQuint: return EaseInOutQuint;
-                case Ease.EaseInSine: return EaseInSine;
-                case Ease.EaseOutSine: return EaseOutSine;
-                case Ease.EaseInOutSine: return EaseInOutSine;
-                case Ease.EaseInExpo: return EaseInExpo;
-                case Ease.EaseOutExpo: return EaseOutExpo;
-                case Ease.EaseInOutExpo: return EaseInOutExpo;
-                case Ease.EaseInCirc: return EaseInCirc;
-                case Ease.EaseOutCirc: return EaseOutCirc;
-                case Ease.EaseInOutCirc: return EaseInOutCirc;
-                case Ease.Linear: return Linear;
-                case Ease.Spring: return Spring;
-                case Ease.EaseInBounce: return EaseInBounce;
-                case Ease.EaseOutBounce: return EaseOutBounce;
-                case Ease.EaseInOutBounce: return EaseInOutBounce;
-                case Ease.EaseInBack: return EaseInBack;
-                case Ease.EaseOutBack: return EaseOutBack;
-                case Ease.EaseInOutBack: return EaseInOutBack;
-                case Ease.EaseInElastic: return EaseInElastic;
-                case Ease.EaseOutElastic: return EaseOutElastic;
-                case Ease.EaseInOutElastic: return EaseInOutElastic;
-                default: return null;
-            }
-        }
+                Ease.EaseInQuad => EaseInQuad,
+                Ease.EaseOutQuad => EaseOutQuad,
+                Ease.EaseInOutQuad => EaseInOutQuad,
+                Ease.EaseInCubic => EaseInCubic,
+                Ease.EaseOutCubic => EaseOutCubic,
+                Ease.EaseInOutCubic => EaseInOutCubic,
+                Ease.EaseInQuart => EaseInQuart,
+                Ease.EaseOutQuart => EaseOutQuart,
+                Ease.EaseInOutQuart => EaseInOutQuart,
+                Ease.EaseInQuint => EaseInQuint,
+                Ease.EaseOutQuint => EaseOutQuint,
+                Ease.EaseInOutQuint => EaseInOutQuint,
+                Ease.EaseInSine => EaseInSine,
+                Ease.EaseOutSine => EaseOutSine,
+                Ease.EaseInOutSine => EaseInOutSine,
+                Ease.EaseInExpo => EaseInExpo,
+                Ease.EaseOutExpo => EaseOutExpo,
+                Ease.EaseInOutExpo => EaseInOutExpo,
+                Ease.EaseInCirc => EaseInCirc,
+                Ease.EaseOutCirc => EaseOutCirc,
+                Ease.EaseInOutCirc => EaseInOutCirc,
+                Ease.Linear => Linear,
+                Ease.Spring => Spring,
+                Ease.EaseInBounce => EaseInBounce,
+                Ease.EaseOutBounce => EaseOutBounce,
+                Ease.EaseInOutBounce => EaseInOutBounce,
+                Ease.EaseInBack => EaseInBack,
+                Ease.EaseOutBack => EaseOutBack,
+                Ease.EaseInOutBack => EaseInOutBack,
+                Ease.EaseInElastic => EaseInElastic,
+                Ease.EaseOutElastic => EaseOutElastic,
+                Ease.EaseInOutElastic => EaseInOutElastic,
+                _ => null
+            };
+
 
         /// <summary>
         /// Gets the derivative function of the appropriate easing function. If you use an easing function for position then this
@@ -707,44 +706,42 @@ namespace UTweener
         /// </summary>
         /// <param name="easingFunction"></param>
         /// <returns>The derivative function</returns>
-        public static Function GetEasingFunctionDerivative(Ease easingFunction)
-        {
-            switch (easingFunction)
+        public static Function GetEasingFunctionDerivative(Ease easingFunction) =>
+            easingFunction switch
             {
-                case Ease.EaseInQuad: return EaseInQuadD;
-                case Ease.EaseOutQuad: return EaseOutQuadD;
-                case Ease.EaseInOutQuad: return EaseInOutQuadD;
-                case Ease.EaseInCubic: return EaseInCubicD;
-                case Ease.EaseOutCubic: return EaseOutCubicD;
-                case Ease.EaseInOutCubic: return EaseInOutCubicD;
-                case Ease.EaseInQuart: return EaseInQuartD;
-                case Ease.EaseOutQuart: return EaseOutQuartD;
-                case Ease.EaseInOutQuart: return EaseInOutQuartD;
-                case Ease.EaseInQuint: return EaseInQuintD;
-                case Ease.EaseOutQuint: return EaseOutQuintD;
-                case Ease.EaseInOutQuint: return EaseInOutQuintD;
-                case Ease.EaseInSine: return EaseInSineD;
-                case Ease.EaseOutSine: return EaseOutSineD;
-                case Ease.EaseInOutSine: return EaseInOutSineD;
-                case Ease.EaseInExpo: return EaseInExpoD;
-                case Ease.EaseOutExpo: return EaseOutExpoD;
-                case Ease.EaseInOutExpo: return EaseInOutExpoD;
-                case Ease.EaseInCirc: return EaseInCircD;
-                case Ease.EaseOutCirc: return EaseOutCircD;
-                case Ease.EaseInOutCirc: return EaseInOutCircD;
-                case Ease.Linear: return LinearD;
-                case Ease.Spring: return SpringD;
-                case Ease.EaseInBounce: return EaseInBounceD;
-                case Ease.EaseOutBounce: return EaseOutBounceD;
-                case Ease.EaseInOutBounce: return EaseInOutBounceD;
-                case Ease.EaseInBack: return EaseInBackD;
-                case Ease.EaseOutBack: return EaseOutBackD;
-                case Ease.EaseInOutBack: return EaseInOutBackD;
-                case Ease.EaseInElastic: return EaseInElasticD;
-                case Ease.EaseOutElastic: return EaseOutElasticD;
-                case Ease.EaseInOutElastic: return EaseInOutElasticD;
-                default: return null;
-            }
-        }
+                Ease.EaseInQuad => EaseInQuadD,
+                Ease.EaseOutQuad => EaseOutQuadD,
+                Ease.EaseInOutQuad => EaseInOutQuadD,
+                Ease.EaseInCubic => EaseInCubicD,
+                Ease.EaseOutCubic => EaseOutCubicD,
+                Ease.EaseInOutCubic => EaseInOutCubicD,
+                Ease.EaseInQuart => EaseInQuartD,
+                Ease.EaseOutQuart => EaseOutQuartD,
+                Ease.EaseInOutQuart => EaseInOutQuartD,
+                Ease.EaseInQuint => EaseInQuintD,
+                Ease.EaseOutQuint => EaseOutQuintD,
+                Ease.EaseInOutQuint => EaseInOutQuintD,
+                Ease.EaseInSine => EaseInSineD,
+                Ease.EaseOutSine => EaseOutSineD,
+                Ease.EaseInOutSine => EaseInOutSineD,
+                Ease.EaseInExpo => EaseInExpoD,
+                Ease.EaseOutExpo => EaseOutExpoD,
+                Ease.EaseInOutExpo => EaseInOutExpoD,
+                Ease.EaseInCirc => EaseInCircD,
+                Ease.EaseOutCirc => EaseOutCircD,
+                Ease.EaseInOutCirc => EaseInOutCircD,
+                Ease.Linear => LinearD,
+                Ease.Spring => SpringD,
+                Ease.EaseInBounce => EaseInBounceD,
+                Ease.EaseOutBounce => EaseOutBounceD,
+                Ease.EaseInOutBounce => EaseInOutBounceD,
+                Ease.EaseInBack => EaseInBackD,
+                Ease.EaseOutBack => EaseOutBackD,
+                Ease.EaseInOutBack => EaseInOutBackD,
+                Ease.EaseInElastic => EaseInElasticD,
+                Ease.EaseOutElastic => EaseOutElasticD,
+                Ease.EaseInOutElastic => EaseInOutElasticD,
+                _ => null
+            };
     }
 }

@@ -1,23 +1,22 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace UTweener
 {
-    public interface IUTween
-    {
-        void Update();
-    } 
-
-    public class UTweener : MonoBehaviour
+    public sealed class UTweener : MonoBehaviour
     {
         private static UTweener instance;
-        public static UTweener Instance => instance ?? (instance = new GameObject("Tweener").AddComponent<UTweener>());
+        public static UTweener Instance => instance ??= new GameObject(nameof(UTweener)).AddComponent<UTweener>();
 
-        private List<IUTween> items = new List<IUTween>();
+        private List<UTween> items = new List<UTween>();
 
-        public static void Add(IUTween newTween) => Instance.items.Add(newTween);
-        public static void Remove(IUTween tween) => Instance.items.Remove(tween);
+        public static bool IsExist(UTween tween) => Instance.items.Find(item => item == tween) != null;
+        public static void Add(UTween newTween)
+        {
+            if(!IsExist(newTween)) 
+                Instance.items.Add(newTween);
+        }
+        public static void Remove(UTween tween) => Instance.items.Remove(tween);
 
         private void Update()
         {
